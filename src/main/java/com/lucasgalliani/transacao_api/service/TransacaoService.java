@@ -24,7 +24,7 @@ public class TransacaoService {
 
     public void cadastroTransacoes(TransacaoDTO dto) {
 
-        log.info("Iniciado o processamento de gravar transcações.");
+        log.info("Iniciado o processamento de gravar transcações..");
 
         if (dto.dataHora().isAfter(OffsetDateTime.now())) {
 
@@ -44,7 +44,7 @@ public class TransacaoService {
 
     public void limparTransacoes(){
 
-        log.info("Limpando as transações.");
+        log.info("Limpando as transações..");
 
         listaTransacao.clear();
     }
@@ -53,7 +53,7 @@ public class TransacaoService {
 
         OffsetDateTime dataHoraIntervalo = OffsetDateTime.now().minusSeconds(intervaloHora);
 
-        log.info("Iniciando o processo de buscar de transações.");
+        log.info("Iniciando o processo de buscar de transações..");
 
         return listaTransacao.stream()
                 .filter(t -> t.dataHora().isAfter(dataHoraIntervalo))

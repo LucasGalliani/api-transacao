@@ -1,6 +1,6 @@
 package com.lucasgalliani.transacao_api.controller;
 
-import com.lucasgalliani.transacao_api.dto.EstatisticaDTO;
+import com.lucasgalliani.transacao_api.domain.dto.EstatisticaDTO;
 import com.lucasgalliani.transacao_api.service.EstatisticaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

@@ -1,7 +1,7 @@
 package com.lucasgalliani.transacao_api.controller;
 
 
-import com.lucasgalliani.transacao_api.dto.TransacaoDTO;
+import com.lucasgalliani.transacao_api.domain.dto.TransacaoDTO;
 import com.lucasgalliani.transacao_api.service.TransacaoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

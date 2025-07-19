@@ -1,7 +1,7 @@
 package com.lucasgalliani.transacao_api.service;
 
 
-import com.lucasgalliani.transacao_api.dto.TransacaoDTO;
+import com.lucasgalliani.transacao_api.domain.dto.TransacaoDTO;
 import com.lucasgalliani.transacao_api.exception.UnprocessableEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

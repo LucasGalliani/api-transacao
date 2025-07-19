@@ -1,4 +1,4 @@
-package com.lucasgalliani.transacao_api.dto;
+package com.lucasgalliani.transacao_api.domain.dto;
 
 import java.time.OffsetDateTime;
 

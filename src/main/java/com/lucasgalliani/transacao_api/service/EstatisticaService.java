@@ -1,8 +1,8 @@
 package com.lucasgalliani.transacao_api.service;
 
 
-import com.lucasgalliani.transacao_api.dto.EstatisticaDTO;
-import com.lucasgalliani.transacao_api.dto.TransacaoDTO;
+import com.lucasgalliani.transacao_api.domain.dto.EstatisticaDTO;
+import com.lucasgalliani.transacao_api.domain.dto.TransacaoDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

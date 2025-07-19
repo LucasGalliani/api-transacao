@@ -1,4 +1,4 @@
-package com.lucasgalliani.transacao_api.dto;
+package com.lucasgalliani.transacao_api.domain.dto;
 
 public record EstatisticaDTO(Long count,
                              Double sum,

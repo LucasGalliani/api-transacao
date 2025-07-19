@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -48,14 +49,17 @@ public class TransacaoService {
         listaTransacao.clear();
     }
 
-    public List<TransacaoDTO> buscarTransacoes(Integer intervaloHora){
+    public List<TransacaoDTO> buscarTransacoes(Integer intervaloTempo){
 
-        OffsetDateTime dataHoraIntervalo = OffsetDateTime.now().minusSeconds(intervaloHora);
+        log.info("Transações atuais na lista:");
 
-        log.info("Iniciando o processo de buscar de transações..");
+
+        OffsetDateTime horario = OffsetDateTime.now(ZoneOffset.UTC).minusSeconds(intervaloTempo);
 
         return listaTransacao.stream()
-                .filter(t -> t.dataHora().isAfter(dataHoraIntervalo))
+                .filter(t -> t.dataHora().isAfter(horario))
                 .collect(Collectors.toList());
+
+
     }
 }

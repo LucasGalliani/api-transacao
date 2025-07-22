@@ -23,7 +23,6 @@ public class EstatisticaServiceTest {
     @InjectMocks
     EstatisticaService estatisticaService;
 
-
     @Mock
     TransacaoService transacaoService;
 
@@ -54,9 +53,33 @@ public class EstatisticaServiceTest {
                 20.0  // min
         );
 
+        verify(transacaoService,times(1)).buscarTransacoes(60);
+
+        assertThat(resultado).usingRecursiveComparison().isEqualTo(estatisticaDTO);
+
+
         assertThat(resultado)
                 .usingRecursiveComparison()
                 .isEqualTo(estatisticaEsperada);
+    }
+
+    @Test
+    void calcularEstatisticasQuandoListaVazia(){
+
+        EstatisticaDTO estatisticasEsperado = new EstatisticaDTO(0L,0.0,0.0,0.0,0.0);
+
+        when(transacaoService.buscarTransacoes(60))
+                .thenReturn(Collections.emptyList());
+
+        EstatisticaDTO resultado = estatisticaService.calcularEstatisticasTransaca(60);
+
+        verify(transacaoService, times(1))
+                .buscarTransacoes(60);
+
+
+        assertThat(resultado)
+                .usingRecursiveComparison()
+                .isEqualTo(estatisticasEsperado);
     }
 
 }
